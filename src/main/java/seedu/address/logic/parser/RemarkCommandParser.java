@@ -24,10 +24,11 @@ public class RemarkCommandParser implements Parser<RemarkCommand> {
                     RemarkCommand.MESSAGE_USAGE), ive);
         }
 
-        // Convert the input into a Remark object
+        // Convert the input into a Remark object (empty string if no remark provided)
         Remark remark = new Remark(argMultimap.getValue(PREFIX_REMARK).orElse(""));
 
         return new RemarkCommand(index, remark);
     }
 }
+
 
