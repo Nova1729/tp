@@ -55,7 +55,7 @@ public class RemarkCommand extends Command {
                 personToEdit.getPhone(),
                 personToEdit.getEmail(),
                 personToEdit.getAddress(),
-                remark, // Updated remark field
+                personToEdit.getRemark(),
                 personToEdit.getTags()
         );
 
