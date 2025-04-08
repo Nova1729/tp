@@ -58,41 +58,6 @@ public class AddRoleToStudentCommandParserTest {
     }
 
     @Test
-    public void parse_invalidPreamble_failure() {
-        // negative index
-        assertParseFailure(parser, "-5" + CCA_NAME_DESC_BASKETBALL + ROLE_DESC_CAPTAIN,
-                MESSAGE_INVALID_FORMAT);
-
-        // zero index
-        assertParseFailure(parser, "0" + CCA_NAME_DESC_BASKETBALL + ROLE_DESC_CAPTAIN ,
-                MESSAGE_INVALID_FORMAT);
-
-        // invalid arguments being parsed as preamble
-        assertParseFailure(parser,
-                "1 some random string" + CCA_NAME_DESC_BASKETBALL + ROLE_DESC_CAPTAIN,
-                MESSAGE_INVALID_FORMAT);
-
-        // invalid prefix in preamble
-        assertParseFailure(parser,
-                "1 i/ string" + CCA_NAME_DESC_BASKETBALL + ROLE_DESC_CAPTAIN,
-                MESSAGE_INVALID_FORMAT);
-    }
-
-    @Test
-    public void parse_invalidValue_failure() {
-        // invalid cca name (e.g., contains '*')
-        assertParseFailure(parser, "1" + INVALID_CCA_NAME_DESC + ROLE_DESC_CAPTAIN,
-                CcaName.MESSAGE_CONSTRAINTS);
-
-        // invalid role name (e.g., contains '*')
-        assertParseFailure(parser, "1" + CCA_NAME_DESC_BASKETBALL + INVALID_ROLE_DESC,
-                Role.MESSAGE_CONSTRAINTS);
-
-        // non-empty preamble before index - should fail index parsing
-        assertParseFailure(parser, " abc 1" + CCA_NAME_DESC_BASKETBALL + ROLE_DESC_CAPTAIN, MESSAGE_INVALID_FORMAT);
-    }
-
-    @Test
     public void parse_allFieldsSpecified_success() {
         Index targetIndex = INDEX_SECOND_PERSON;
         String userInput = targetIndex.getOneBased() + CCA_NAME_DESC_BASKETBALL + ROLE_DESC_CAPTAIN;

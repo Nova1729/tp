@@ -1,42 +1,58 @@
 {
     "persons": [
         {
-        "name": "Alice Pauline",
-        "phone": "94351253",
-        "email": "alice@example.com",
-        "address": "123, Jurong West Ave 6, #08-111",
-        "roles": ["friends"],
-        "ccas": [
-            {
-                "ccaName": "Acting"
-            }
-        ]
-        },
-        {
-        "name": "Benson Meier",
-        "phone": "98765432",
-        "email": "benson@example.com",
-        "address": "311, Clementi Ave 2, #02-25",
-        "roles": ["owesMoney", "friends"],
-        "ccas": [
-            {
-                "ccaName": "Basketball"
-            },
-            {
-                "ccaName": "Badminton"
-            },
-            {
-                "ccaName": "Invalid CCA"
-            }
-        ]
+            "name": "Alice Pauline",
+            "phone": "94351253",
+            "email": "alice@example.com",
+            "address": "123, Jurong West Ave 6, #08-111",
+            "ccaInformation": [
+                {
+                    "cca": {
+                        "ccaName": "Acting",
+                        "roles": [
+                            "President",
+                            "Member",
+                            "Vice-President"
+                        ],
+                        "totalSessions": 10
+                    },
+                    "role": "Vice-President",
+                    "attendedSessions": 8
+                },
+                {
+                    "cca": {
+                        "ccaName": "Basketball",
+                        "roles": [
+                            "Vice-Captain",
+                            "Captain",
+                            "Member"
+                        ],
+                        "totalSessions": 15
+                    },
+                    "role": "Member",
+                    "attendedSessions": 10
+                }
+            ]
         }
-    ],
+        ],
     "ccas": [
         {
-        "ccaName": "Basketball"
+            "ccaName": "***Acting",
+            "roles": [
+                "President",
+                "Member",
+                "Vice-President"
+            ],
+            "totalSessions": 10
         },
         {
-        "ccaName": "Badminton"
+            "ccaName": "Basketball",
+            "roles": [
+                "Vice-Captain",
+                "Captain",
+                "Member"
+            ],
+            "totalSessions": 15
         }
-    ]
+        ]
 }

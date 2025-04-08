@@ -42,7 +42,8 @@ public class EditStudentCommandParser implements Parser<EditStudentCommand> {
             index = ParserUtil.parseIndex(argMultimap.getPreamble());
         } catch (ParseException pe) {
             throw new ParseException(
-                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditStudentCommand.MESSAGE_USAGE), pe);
+                    String.format(MESSAGE_INVALID_COMMAND_FORMAT,
+                            pe.getMessage() + " " + EditStudentCommand.MESSAGE_USAGE), pe);
         }
 
         if (argMultimap.getValue(PREFIX_NAME).isPresent()) {

@@ -39,11 +39,11 @@
             <Region fx:constant="USE_PREF_SIZE" />
           </minWidth>
         </Label>
-        <Label fx:id="ccaName" styleClass="cell_big_label" />
+        <Label fx:id="ccaName" styleClass="cell_big_label" wrapText="true"/>
       </HBox>
 
       <!-- Row 2: Roles (single label) -->
-      <Label fx:id="roles" styleClass="cell_small_label" />
+      <Label fx:id="roles" styleClass="cell_small_label" wrapText="true"/>
 
       <!-- Row 3: Session count -->
       <Label fx:id="sessionCount" text="Total sessions: ..." wrapText="true"/>

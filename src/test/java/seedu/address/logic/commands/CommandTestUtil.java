@@ -39,16 +39,6 @@ public class CommandTestUtil {
     public static final String VALID_CCA_NAME_ACTING = "Acting";
 
     public static final String CCA_NAME_DESC_BASKETBALL = " " + PREFIX_CCA_NAME + VALID_CCA_NAME_BASKETBALL;
-    public static final String CCA_NAME_DESC_BADMINTON = " " + PREFIX_CCA_NAME + VALID_CCA_NAME_BADMINTON;
-    public static final String CCA_NAME_DESC_SWIMMING = " " + PREFIX_CCA_NAME + VALID_CCA_NAME_SWIMMING;
-    public static final String CCA_NAME_DESC_TABLE_TENNIS = " " + PREFIX_CCA_NAME + VALID_CCA_NAME_TABLE_TENNIS;
-    public static final String CCA_NAME_DESC_TENNIS = " " + PREFIX_CCA_NAME + VALID_CCA_NAME_TENNIS;
-    public static final String CCA_NAME_DESC_VOLLEYBALL = " " + PREFIX_CCA_NAME + VALID_CCA_NAME_VOLLEYBALL;
-    public static final String CCA_NAME_DESC_TRACK_AND_FIELD = " " + PREFIX_CCA_NAME + VALID_CCA_NAME_TRACK_AND_FIELD;
-    public static final String CCA_NAME_DESC_GARDENING = " " + PREFIX_CCA_NAME + VALID_CCA_NAME_GARDENING;
-    public static final String CCA_NAME_DESC_ACTING = " " + PREFIX_CCA_NAME + VALID_CCA_NAME_ACTING;
-
-    // '*' not allowed in ccas
     public static final String INVALID_CCA_NAME_DESC = " " + PREFIX_CCA_NAME + "Basketball*";
 
     public static final String VALID_NAME_AMY = "Amy Bee";
@@ -82,8 +72,6 @@ public class CommandTestUtil {
     public static final String INVALID_PHONE_DESC = " " + PREFIX_PHONE + "911a"; // 'a' not allowed in phones
     public static final String INVALID_EMAIL_DESC = " " + PREFIX_EMAIL + "bob!yahoo"; // missing '@' symbol
     public static final String INVALID_ADDRESS_DESC = " " + PREFIX_ADDRESS; // empty string not allowed for addresses
-    public static final String INVALID_ROLE_DESC = " " + PREFIX_ROLE + "member*"; // '*' not allowed in roles
-    public static final String INVALID_CCA_DESC = " " + PREFIX_CCA_NAME + "Badminton*"; // '*' not allowed in ccas
     public static final String INVALID_AMOUNT_DESC = " " + PREFIX_AMOUNT + "-1"; // amount not allowed in ccas
 
     public static final String PREAMBLE_WHITESPACE = "\t  \r  \n";

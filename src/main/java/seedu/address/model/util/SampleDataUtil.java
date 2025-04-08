@@ -42,6 +42,8 @@ public class SampleDataUtil {
                     new HashSet<>(Arrays.asList(president, vicePresident, member)), new SessionCount(10)),
             new Cca(new CcaName("Basketball"),
                     new HashSet<>(Arrays.asList(captain, viceCaptain, member)), new SessionCount(12)),
+            new Cca(new CcaName("Boxing"),
+                    new HashSet<>(Arrays.asList(president, vicePresident, member)), new SessionCount(20)),
             new Cca(new CcaName("Badminton"),
                     new HashSet<>(Arrays.asList(captain, viceCaptain, member)), new SessionCount(15)),
             new Cca(new CcaName("Canoe"),
@@ -59,7 +61,7 @@ public class SampleDataUtil {
         return new Person[] {
             new Person(new Name("Alex Yeoh"), new Phone("87438807"), new Email("alexyeoh@example.com"),
                 new Address("Blk 30 Geylang Street 29, #06-40"),
-                    getCcaInformationSet(sampleAb, "Canoe", "Member", "5")),
+                    getCcaInformationSet(sampleAb, "Boxing", "Member", "6")),
             new Person(new Name("Bernice Yu"), new Phone("99272758"), new Email("berniceyu@example.com"),
                 new Address("Blk 30 Lorong 3 Serangoon Gardens, #07-18"),
                     getCcaInformationSet(sampleAb, "Basketball", "Vice-Captain", "10")),

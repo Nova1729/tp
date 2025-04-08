@@ -10,9 +10,11 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 public class CcaName {
 
     public static final String MESSAGE_CONSTRAINTS =
-        "Cca names must consist of alphanumeric characters and can only include spaces or hyphens between words."
+        "Cca names must start and end with an alphanumeric character, must not be empty, "
+        + "can only include spaces or hyphens between words, "
+        + "and must be at most 100 characters long (including spaces and hyphens)."
         + " For example, R0ck-n-R0ll is a valid CCA name, but -Basketball- is not.";
-    public static final String VALIDATION_REGEX = "^[A-Za-z0-9]+(?:[ -][A-Za-z0-9]+)*$";
+    public static final String VALIDATION_REGEX = "^(?=.{1,100}$)[A-Za-z0-9]+(?:[ -][A-Za-z0-9]+)*$";
 
     public final String fullCcaName;
 

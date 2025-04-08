@@ -9,7 +9,7 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 public class Amount {
 
     public static final String MESSAGE_CONSTRAINTS =
-            "Amount should be a positive integer.";
+            "Amount should be a positive integer and should not exceed 999";
 
     private final int amount;
 
@@ -27,7 +27,7 @@ public class Amount {
      * Returns true if a given amount is a valid amount.
      */
     public static boolean isValidAmount(int test) {
-        return test > 0;
+        return test > 0 && test <= 999;
     }
 
     /**

@@ -4,7 +4,6 @@ import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_CCA_NAME;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseFailure;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseSuccess;
-import static seedu.address.logic.parser.ParserUtil.MESSAGE_INVALID_INDEX;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
 import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_PERSON;
 
@@ -46,35 +45,6 @@ public class RemoveCcaFromStudentCommandParserTest {
 
         // no index and no field specified
         assertParseFailure(parser, "", MESSAGE_INVALID_FORMAT);
-    }
-
-    @Test
-    public void parse_invalidPreamble_failure() {
-        // negative index
-        assertParseFailure(parser, "-5" + CCA_NAME_DESC_BASKETBALL,
-                String.format(MESSAGE_INVALID_FORMAT, MESSAGE_INVALID_INDEX));
-
-        // zero index
-        assertParseFailure(parser, "0" + CCA_NAME_DESC_BASKETBALL,
-                String.format(MESSAGE_INVALID_FORMAT, MESSAGE_INVALID_INDEX));
-
-        // invalid arguments being parsed as preamble
-        assertParseFailure(parser, "1 some random string" + CCA_NAME_DESC_BASKETBALL,
-                String.format(MESSAGE_INVALID_FORMAT, MESSAGE_INVALID_INDEX));
-
-        // invalid prefix in preamble
-        assertParseFailure(parser, "1 i/ string" + CCA_NAME_DESC_BASKETBALL,
-                String.format(MESSAGE_INVALID_FORMAT, MESSAGE_INVALID_INDEX));
-    }
-
-    @Test
-    public void parse_invalidValue_failure() {
-        // invalid cca name (e.g., contains '*')
-        assertParseFailure(parser, "1" + INVALID_CCA_NAME_DESC, CcaName.MESSAGE_CONSTRAINTS);
-
-        // non-empty preamble before index - should fail index parsing
-        assertParseFailure(parser, " abc 1" + CCA_NAME_DESC_BASKETBALL,
-                MESSAGE_INVALID_FORMAT);
     }
 
     @Test

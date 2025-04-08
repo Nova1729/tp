@@ -19,7 +19,7 @@ public class Attendance {
      * Constructs an Attendance object.
      *
      * @param sessionsAttended Number of attended sessions (must be non-negative).
-     * @param totalSessions The total number of sessions in the CCA.
+     * @param tota  lSessions The total number of sessions in the CCA.
      */
     public Attendance(SessionCount sessionsAttended, SessionCount totalSessions) {
         requireNonNull(sessionsAttended);

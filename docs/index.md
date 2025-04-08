@@ -6,7 +6,7 @@ title: "CCAttendance"
 [![CI Status](https://github.com/AY2425S2-CS2103T-T09-4/tp/workflows/Java%20CI/badge.svg)](https://github.com/AY2425S2-CS2103T-T09-4/tp/actions)
 [![codecov](https://codecov.io/gh/AY2425S2-CS2103T-T09-4/tp/graph/badge.svg?token=N4G86KG3AJ)](https://codecov.io/gh/AY2425S2-CS2103T-T09-4/tp)
 
-<img src="images/Ui.png" alt="Ui" width="500" height="500"/>
+<img src="images/Ui.png" alt="Ui" width="500" height="453"/>
 
 # CCAttendance
 CCAttendance is a desktop app for managing attendance of students in CCAs, optimized for use via a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, CCAttendance can get your attendance management tasks done faster than traditional GUI apps.

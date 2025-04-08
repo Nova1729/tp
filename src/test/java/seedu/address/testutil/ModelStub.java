@@ -67,6 +67,11 @@ public class ModelStub implements Model {
     }
 
     @Override
+    public boolean hasPersonExcept(Person person, Person otherPerson) {
+        throw new AssertionError("This method should not be called.");
+    }
+
+    @Override
     public boolean isValidPersonCcas(Person person) {
         throw new AssertionError("This method should not be called.");
     }

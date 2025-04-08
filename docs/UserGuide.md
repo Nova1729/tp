@@ -18,13 +18,13 @@ Welcome to CCAttendance! We've created this friendly desktop app for **recording
 1. Ensure you have Java `17` or above installed in your Computer.<br>
    **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
 
-1. Download the latest `.jar` file from [here](https://github.com/AY2425S2-CS2103T-T09-4/tp/releases/tag/v1.3).
+1. Download the latest `.jar` file from [here](https://github.com/AY2425S2-CS2103T-T09-4/tp/releases/tag/v1.6).
 
 1. Copy the file to the folder you want to use as the _home folder_ for CCAttendance.
 
 1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar CCAttendance.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
-   <img src="images/Ui.png" alt="Ui" width="500" height="500"/>
+   <img src="images/Ui.png" alt="Ui" width="500" height="453"/>
 
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
@@ -53,7 +53,7 @@ Welcome to CCAttendance! We've created this friendly desktop app for **recording
 * The attendance is represented by the element labeled `B` which shows the CCA on the left and the number of sessions attended out of the total sessions in the brackets. E.g. the student above has attended 6 out of 20 sessions in `Boxing` CCA.
 
 ### CCA
-<img src="images/cca.png" alt="CCA" width="500" height="260"/>
+<img src="images/cca.png" alt="CCA" width="500" height="320"/>
 
 * Each CCA is represented by a CCA card. The card shows the name of the CCA, the roles available in the CCA, and the total sessions.
 
@@ -109,13 +109,13 @@ Format: `find KEYWORD [MORE_KEYWORDS]`
 * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`.
 * Only the name is searched.
 * Only full words will be matched e.g. `Han` will not match `Hans`.
-* Persons matching at least one keyword will be returned (i.e. `OR` search).
+* Students matching at least one keyword will be returned (i.e. `OR` search).
   e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`.
 
 Examples:
 * `find John` returns `john` and `John Doe`
 * `find alex david` returns `Alex Yeoh`, `David Li`<br>
-<img src="images/findAlexDavidResult.png" alt="Find" width="500" height="400"/>
+<img src="images/findAlexDavidResult.png" alt="Find" width="500" height="342"/>
 
 ### Creating a student: `create_s`
 
@@ -123,7 +123,10 @@ Creates and adds a student to the list of students.
 
 Format: `create_s n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS​`
 
-* Names should only contain alphabetic characters and a single space between words, and it should not be blank. Unfortunately, we do not allow `/` in names, making names like `David s/o Daniel` invalid.
+* Names should only contain alphabetic characters and a single space between words, it should not be blank and must be at most 100 characters (including spaces). Unfortunately, we do not allow `/` in names, making names like `David s/o Daniel` invalid.
+* Phone numbers should only contain numbers. It should be at least 3 digits long, and at most 10 digits long.
+* Emails should be of the format local-part@domain and must not exceed 150 characters.
+* Addresses can take any values, it should not be blank and must be at most 150 characters long (including spaces).
 
 Examples:
 * `create_s n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` creates a student named `John Doe`, with phone number `98765432`, email of `johnd@example.com`, and address of `John street, block 123, #01-01`.
@@ -135,7 +138,7 @@ Creates and adds a CCA to the list of CCAs.
 Format: `create_c c/CCA_NAME`
 * Creates and adds a CCA with a name.
 * The new CCA will have a default role `Member` and total sessions set to 0 by default.
-* Cca names must consist of alphanumeric characters and can only include spaces or hyphens between words. For example, R0ck-n-R0ll is a valid CCA name, but -Basketball- is not. It is up to the user to make meaningful CCA names.
+* CCA names must consist of alphanumeric characters, can only include spaces or hyphens between words and must be at most 100 characters long. For example, `R0ck-n-R0ll` is a valid CCA name, but `-Basketball-` is not. It is up to the user to make meaningful CCA names.
 <box type="warning" seamless>
 
 **Caution:**
@@ -154,6 +157,7 @@ Format: `edit_s INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS]​`
 * Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. The index **must be a positive integer** (1, 2, 3, …).
 * At least one of the optional fields (`n/`, `p/`, `e/`, `a/`) must be provided.
 * Existing values for the specified fields will be overwritten by the new input values.
+* The edited student cannot have the same name, phone numer, or email as another student in the student list.
 
 Examples:
 * `edit_s 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the student at index 1 to be `91234567` and `johndoe@example.com` respectively. Their name, address, CCAs, and roles remain unchanged.
@@ -164,6 +168,8 @@ Examples:
 Edits an existing CCA in the CCA list.
 
 Format: `edit_c INDEX [c/CCA_NAME] [r/ROLE_NAME]... [t/TOTAL_SESSIONS]`
+
+* The edited CCA cannot have the same name as another CCA in the CCA list.
 
 <box type="warning" seamless>
 
@@ -180,6 +186,8 @@ Role names are case-sensitive. For example, `Captain` and `captain` are consider
 * Typing `r/` without specifying any roles after it remove all the CCA’s roles except for `Member`.
 * If an existing student have their role removed from the CCA, the student's role will be set to `Member`.
 * If an existing student's attended sessions is above the new total sessions, the student's attended sessions will be set to the new total sessions.
+* CCA names must consist of alphanumeric characters, can only include spaces or hyphens between words and must be at most 100 characters long.
+* Role names should be alphanumeric, allowing the use of hyphens, and must be at most 50 characters long (including spaces and hyphens).
 
 Examples:
 *  `edit_c 1 c/Volleyball r/Captain r/Vice-Captain t/40` Edits the CCA with the first index in the CCA list. Renames it to `Volleyball`, updates the available roles to `Captain`, `Vice-Captain` and `Member`, and updates the total sessions to 40.
@@ -209,6 +217,12 @@ Format: `add_r INDEX c/CCA_NAME r/ROLE_NAME`
 * The role must exist in the CCA.
 * The student must be in the CCA.
 * The student must not have an existing role in the CCA (other than `Member`).
+
+<box type="tip" seamless>
+
+**Tip:**
+If you want to edit the role of a student in a CCA, you can use `remove_r` to remove the existing role and then use `add_r` to add the new role.
+</box>
 
 Examples:
 * `add_r 2 c/Basketball r/Captain` Adds the role `Captain` to the 2nd student in the student list in the CCA `Basketball`.
@@ -283,7 +297,7 @@ Format: `remove_c INDEX c/CCA_NAME`
 * The student must currently be assigned to the specified `CCA_NAME` for the removal to be successful.
 
 Examples:
-* `remove_c 1 c/Basketball` Removes the `Basketball` CCA assignment from the student at index 1 in the current student list.
+* `remove_c 1 c/Basketball` removes the `Basketball` CCA assignment from the student at index 1 in the current student list.
 
 ### Clearing all entries : `clear`
 

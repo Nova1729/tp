@@ -14,6 +14,7 @@ import java.util.Set;
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.EditCcaCommand;
 import seedu.address.logic.commands.EditCcaCommand.EditCcaDescriptor;
+import seedu.address.logic.commands.EditStudentCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.role.Role;
 
@@ -45,7 +46,8 @@ public class EditCcaCommandParser implements Parser<EditCcaCommand> {
             index = ParserUtil.parseIndex(argMultimap.getPreamble());
         } catch (ParseException pe) {
             throw new ParseException(
-                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditCcaCommand.MESSAGE_USAGE), pe);
+                    String.format(MESSAGE_INVALID_COMMAND_FORMAT,
+                            pe.getMessage() + " " + EditStudentCommand.MESSAGE_USAGE), pe);
         }
 
         if (argMultimap.getValue(PREFIX_CCA_NAME).isPresent()) {

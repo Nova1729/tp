@@ -11,7 +11,6 @@ start
 if () then ([invalid input])
   :Display error message;
 
-
 else ([valid input])
   :Create AddRoleToStudentCommand object;
   :Return the command object to the LogicManager;
@@ -20,7 +19,6 @@ else ([valid input])
 if () then ([student does not exist in Model])
   :Display error message;
 
-
 else ([else])
 
     :Create student with added role;
@@ -28,19 +26,16 @@ else ([else])
 if () then ([CCA does not exist])
   :Display error message;
 
-
 else ([else])
   :get Cca object;
 
 if () then ([person does not have CCA])
   :Display error message;
 
-
 else ([else])
 
 if () then ([invalid role or role not exist in CCA])
   :Display error message;
-
 
 else ([else])
   :Create student with added role;

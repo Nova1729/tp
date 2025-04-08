@@ -24,7 +24,8 @@ import seedu.address.model.role.Role;
  */
 public class ParserUtil {
 
-    public static final String MESSAGE_INVALID_INDEX = "Index is not a non-zero unsigned integer.";
+    public static final String MESSAGE_INVALID_INDEX =
+            "Index is not a non-zero unsigned integer and must not exceed 999.";
 
     /**
      * Parses {@code oneBasedIndex} into an {@code Index} and returns it.

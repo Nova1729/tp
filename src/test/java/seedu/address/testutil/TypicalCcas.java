@@ -61,13 +61,6 @@ public class TypicalCcas {
 
     public static final CcaName CCA_NAME_BASKETBALL = BASKETBALL.getCcaName();
     public static final CcaName CCA_NAME_TENNIS = TENNIS.getCcaName();
-    public static final CcaName CCA_NAME_BADMINTON = BADMINTON.getCcaName();
-    public static final CcaName CCA_NAME_ACTING = ACTING.getCcaName();
-    public static final CcaName CCA_NAME_SWIMMING = SWIMMING.getCcaName();
-    public static final CcaName CCA_NAME_TABLE_TENNIS = TABLE_TENNIS.getCcaName();
-    public static final CcaName CCA_NAME_VOLLEYBALL = VOLLEYBALL.getCcaName();
-    public static final CcaName CCA_NAME_TRACK_AND_FIELD = TRACK_AND_FIELD.getCcaName();
-    public static final CcaName CCA_NAME_GARDENING = GARDENING.getCcaName();
 
     private TypicalCcas() {
     } // prevents instantiation

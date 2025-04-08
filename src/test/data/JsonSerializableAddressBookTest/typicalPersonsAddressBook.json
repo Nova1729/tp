@@ -9,21 +9,29 @@
       "ccaInformation": [
         {
           "cca": {
-            "ccaName": "Basketball",
-            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
-            "totalSessions": 15
-          },
-          "role": "Member",
-          "attendedSessions": 10
-        },
-        {
-          "cca": {
             "ccaName": "Acting",
-            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
+            "roles": [
+              "President",
+              "Member",
+              "Vice-President"
+            ],
             "totalSessions": 10
           },
           "role": "Vice-President",
           "attendedSessions": 8
+        },
+        {
+          "cca": {
+            "ccaName": "Basketball",
+            "roles": [
+              "Vice-Captain",
+              "Captain",
+              "Member"
+            ],
+            "totalSessions": 15
+          },
+          "role": "Member",
+          "attendedSessions": 10
         }
       ]
     },
@@ -35,21 +43,29 @@
       "ccaInformation": [
         {
           "cca": {
-            "ccaName": "Badminton",
-            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
-            "totalSessions": 20
-          },
-          "role": "Member",
-          "attendedSessions": 7
-        },
-        {
-          "cca": {
             "ccaName": "Swimming",
-            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
+            "roles": [
+              "Vice-Captain",
+              "Captain",
+              "Member"
+            ],
             "totalSessions": 10
           },
           "role": "Captain",
           "attendedSessions": 9
+        },
+        {
+          "cca": {
+            "ccaName": "Badminton",
+            "roles": [
+              "Vice-Captain",
+              "Captain",
+              "Member"
+            ],
+            "totalSessions": 20
+          },
+          "role": "Member",
+          "attendedSessions": 7
         }
       ]
     },
@@ -61,21 +77,29 @@
       "ccaInformation": [
         {
           "cca": {
-            "ccaName": "Tennis",
-            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
-            "totalSessions": 20
-          },
-          "role": "Member",
-          "attendedSessions": 17
-        },
-        {
-          "cca": {
             "ccaName": "Table Tennis",
-            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
+            "roles": [
+              "Vice-Captain",
+              "Captain",
+              "Member"
+            ],
             "totalSessions": 15
           },
           "role": "Captain",
           "attendedSessions": 12
+        },
+        {
+          "cca": {
+            "ccaName": "Tennis",
+            "roles": [
+              "Vice-Captain",
+              "Captain",
+              "Member"
+            ],
+            "totalSessions": 20
+          },
+          "role": "Member",
+          "attendedSessions": 17
         }
       ]
     },
@@ -87,21 +111,29 @@
       "ccaInformation": [
         {
           "cca": {
-            "ccaName": "Track and Field",
-            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
-            "totalSessions": 15
-          },
-          "role": "Vice-Captain",
-          "attendedSessions": 12
-        },
-        {
-          "cca": {
             "ccaName": "Volleyball",
-            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
+            "roles": [
+              "Vice-Captain",
+              "Captain",
+              "Member"
+            ],
             "totalSessions": 10
           },
           "role": "Member",
           "attendedSessions": 8
+        },
+        {
+          "cca": {
+            "ccaName": "Track and Field",
+            "roles": [
+              "Vice-Captain",
+              "Captain",
+              "Member"
+            ],
+            "totalSessions": 15
+          },
+          "role": "Vice-Captain",
+          "attendedSessions": 12
         }
       ]
     },
@@ -113,21 +145,29 @@
       "ccaInformation": [
         {
           "cca": {
-            "ccaName": "Badminton",
-            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
-            "totalSessions": 20
-          },
-          "role": "Vice-Captain",
-          "attendedSessions": 14
-        },
-        {
-          "cca": {
             "ccaName": "Gardening",
-            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
+            "roles": [
+              "President",
+              "Member",
+              "Vice-President"
+            ],
             "totalSessions": 20
           },
           "role": "President",
           "attendedSessions": 17
+        },
+        {
+          "cca": {
+            "ccaName": "Badminton",
+            "roles": [
+              "Vice-Captain",
+              "Captain",
+              "Member"
+            ],
+            "totalSessions": 20
+          },
+          "role": "Vice-Captain",
+          "attendedSessions": 14
         }
       ]
     },
@@ -140,7 +180,11 @@
         {
           "cca": {
             "ccaName": "Swimming",
-            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
+            "roles": [
+              "Vice-Captain",
+              "Captain",
+              "Member"
+            ],
             "totalSessions": 10
           },
           "role": "Member",
@@ -149,7 +193,11 @@
         {
           "cca": {
             "ccaName": "Tennis",
-            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
+            "roles": [
+              "Vice-Captain",
+              "Captain",
+              "Member"
+            ],
             "totalSessions": 20
           },
           "role": "Member",
@@ -165,70 +213,113 @@
       "ccaInformation": [
         {
           "cca": {
-            "ccaName": "Basketball",
-            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
-            "totalSessions": 15
-          },
-          "role": "Member",
-          "attendedSessions": 11
-        },
-        {
-          "cca": {
             "ccaName": "Gardening",
-            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
+            "roles": [
+              "President",
+              "Member",
+              "Vice-President"
+            ],
             "totalSessions": 20
           },
           "role": "Vice-President",
           "attendedSessions": 12
+        },
+        {
+          "cca": {
+            "ccaName": "Basketball",
+            "roles": [
+              "Vice-Captain",
+              "Captain",
+              "Member"
+            ],
+            "totalSessions": 15
+          },
+          "role": "Member",
+          "attendedSessions": 11
         }
       ]
     }
   ],
-
   "ccas": [
     {
       "ccaName": "Acting",
-      "roles": [ "President", "Vice-President", "Member" ],
+      "roles": [
+        "President",
+        "Member",
+        "Vice-President"
+      ],
       "totalSessions": 10
     },
     {
-      "ccaName": "Basketball",
-      "roles": [ "Captain", "Vice-Captain", "Member" ],
-      "totalSessions": 15
-    },
-    {
       "ccaName": "Badminton",
-      "roles": [ "Captain", "Vice-Captain", "Member" ],
+      "roles": [
+        "Vice-Captain",
+        "Captain",
+        "Member"
+      ],
       "totalSessions": 20
     },
     {
+      "ccaName": "Basketball",
+      "roles": [
+        "Vice-Captain",
+        "Captain",
+        "Member"
+      ],
+      "totalSessions": 15
+    },
+    {
       "ccaName": "Gardening",
-      "roles": [ "President", "Vice-President", "Member" ],
+      "roles": [
+        "President",
+        "Member",
+        "Vice-President"
+      ],
       "totalSessions": 20
     },
     {
       "ccaName": "Swimming",
-      "roles": [ "Captain", "Vice-Captain", "Member" ],
+      "roles": [
+        "Vice-Captain",
+        "Captain",
+        "Member"
+      ],
       "totalSessions": 10
     },
     {
       "ccaName": "Table Tennis",
-      "roles": [ "Captain", "Vice-Captain", "Member" ],
+      "roles": [
+        "Vice-Captain",
+        "Captain",
+        "Member"
+      ],
       "totalSessions": 15
     },
     {
       "ccaName": "Tennis",
-      "roles": [ "Captain", "Vice-Captain", "Member" ],
+      "roles": [
+        "Vice-Captain",
+        "Captain",
+        "Member"
+      ],
       "totalSessions": 20
     },
     {
       "ccaName": "Track and Field",
-      "roles": [ "Captain", "Vice-Captain", "Member" ],
+      "roles": [
+        "Vice-Captain",
+        "Captain",
+        "Member"
+      ],
       "totalSessions": 15
     },
     {
       "ccaName": "Volleyball",
-      "roles": [ "Captain", "Vice-Captain", "Member" ],
+      "roles": [
+        "Vice-Captain",
+        "Captain",
+        "Member"
+      ],
       "totalSessions": 10
     }
   ]

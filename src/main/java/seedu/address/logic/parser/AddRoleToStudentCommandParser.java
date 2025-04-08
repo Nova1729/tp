@@ -9,6 +9,7 @@ import java.util.stream.Stream;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.AddRoleToStudentCommand;
+import seedu.address.logic.commands.EditStudentCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.cca.CcaName;
 import seedu.address.model.role.Role;
@@ -38,8 +39,9 @@ public class AddRoleToStudentCommandParser implements Parser<AddRoleToStudentCom
         try {
             index = ParserUtil.parseIndex(argMultimap.getPreamble());
         } catch (ParseException pe) {
-            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
-                    AddRoleToStudentCommand.MESSAGE_USAGE), pe);
+            throw new ParseException(
+                    String.format(MESSAGE_INVALID_COMMAND_FORMAT,
+                            pe.getMessage() + " " + EditStudentCommand.MESSAGE_USAGE), pe);
         }
 
         CcaName ccaName = ParserUtil.parseCcaName(argMultimap.getValue(PREFIX_CCA_NAME).get());

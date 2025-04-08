@@ -60,6 +60,12 @@ public interface Model {
     boolean hasPerson(Person person);
 
     /**
+     * Returns true if a person with the same identity as {@code person} exists in the address book.
+     * It ignores if the person is the same as {@code otherPerson}.
+     */
+    boolean hasPersonExcept(Person person, Person otherPerson);
+
+    /**
      * Returns true if all the CCAs of the given person are valid.
      * The person must exist in the address book.
      */
