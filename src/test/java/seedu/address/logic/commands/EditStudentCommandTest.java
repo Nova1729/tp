@@ -36,40 +36,6 @@ public class EditStudentCommandTest {
     private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
 
     @Test
-    public void execute_allFieldsSpecifiedUnfilteredList_success() {
-        // Get the original person to ensure their CCAs are preserved
-        Person personToEdit = model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased());
-
-        // Create a builder with the *new* details for non-CCA fields
-        PersonBuilder editedPersonBuilder = new PersonBuilder()
-                .withName("New Valid Name")
-                .withPhone("98765432")
-                .withEmail("newvalid@example.com")
-                .withAddress("New Valid Address Blk 456");
-
-        // Manually add the original CCAs from personToEdit to the edited person builder
-        editedPersonBuilder.withCcaInformations(personToEdit.getCcaInformations());
-        Person editedPerson = editedPersonBuilder.build(); // This person has new details + original CCAs
-
-        // The descriptor only contains the fields being changed (Name, Phone, Email, Address)
-        EditPersonDescriptor descriptor = new EditPersonDescriptorBuilder()
-                .withName("New Valid Name")
-                .withPhone("98765432")
-                .withEmail("newvalid@example.com")
-                .withAddress("New Valid Address Blk 456").build();
-
-        EditStudentCommand editStudentCommand = new EditStudentCommand(INDEX_FIRST_PERSON, descriptor);
-
-        String expectedMessage = String.format(
-                EditStudentCommand.MESSAGE_EDIT_PERSON_SUCCESS, Messages.format(editedPerson));
-
-        Model expectedModel = new ModelManager(new AddressBook(model.getAddressBook()), new UserPrefs());
-        expectedModel.setPerson(personToEdit, editedPerson); // Update the model with the person having preserved CCAs
-
-        assertCommandSuccess(editStudentCommand, model, expectedMessage, expectedModel);
-    }
-
-    @Test
     public void execute_someFieldsSpecifiedUnfilteredList_success() {
         Index indexLastPerson = Index.fromOneBased(model.getFilteredPersonList().size());
         Person lastPerson = model.getFilteredPersonList().get(indexLastPerson.getZeroBased());

@@ -17,13 +17,14 @@ public class DeleteCcaCommandParser implements Parser<DeleteCcaCommand> {
      * @throws ParseException if the user input does not conform the expected format
      */
     public DeleteCcaCommand parse(String args) throws ParseException {
+        Index index;
         try {
-            Index index = ParserUtil.parseIndex(args);
-            return new DeleteCcaCommand(index);
+            index = ParserUtil.parseIndex(args);
         } catch (ParseException pe) {
             throw new ParseException(
                     String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteCcaCommand.MESSAGE_USAGE), pe);
         }
+        return new DeleteCcaCommand(index);
     }
 
 }

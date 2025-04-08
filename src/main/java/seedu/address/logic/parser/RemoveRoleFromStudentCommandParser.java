@@ -30,8 +30,8 @@ public class RemoveRoleFromStudentCommandParser implements Parser<RemoveRoleFrom
                     String.format(MESSAGE_INVALID_COMMAND_FORMAT, RemoveRoleFromStudentCommand.MESSAGE_USAGE));
         }
 
+        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_CCA_NAME);
         Index index;
-
         try {
             index = ParserUtil.parseIndex(argMultimap.getPreamble());
         } catch (ParseException pe) {
@@ -39,9 +39,7 @@ public class RemoveRoleFromStudentCommandParser implements Parser<RemoveRoleFrom
                     String.format(MESSAGE_INVALID_COMMAND_FORMAT, RemoveRoleFromStudentCommand.MESSAGE_USAGE), pe);
         }
 
-        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_CCA_NAME);
         CcaName ccaName = ParserUtil.parseCcaName(argMultimap.getValue(PREFIX_CCA_NAME).get());
-
         return new RemoveRoleFromStudentCommand(index, ccaName);
     }
 

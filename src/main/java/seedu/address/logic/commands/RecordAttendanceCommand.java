@@ -23,7 +23,7 @@ public class RecordAttendanceCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Records the attendance of a student in a CCA. "
             + "Parameters: "
-            + "STUDENT_INDEX "
+            + "STUDENT_INDEX (must be a positive integer) "
             + PREFIX_CCA_NAME + "CCA_NAME "
             + PREFIX_AMOUNT + "AMOUNT\n"
             + "Example: " + COMMAND_WORD + " 1 " + PREFIX_CCA_NAME + "Basketball " + PREFIX_AMOUNT + "1";

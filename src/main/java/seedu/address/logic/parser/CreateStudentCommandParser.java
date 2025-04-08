@@ -40,16 +40,13 @@ public class CreateStudentCommandParser implements Parser<CreateStudentCommand> 
         }
 
         argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_NAME, PREFIX_PHONE, PREFIX_EMAIL, PREFIX_ADDRESS);
+
         Name name = ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME).get());
         Phone phone = ParserUtil.parsePhone(argMultimap.getValue(PREFIX_PHONE).get());
         Email email = ParserUtil.parseEmail(argMultimap.getValue(PREFIX_EMAIL).get());
         Address address = ParserUtil.parseAddress(argMultimap.getValue(PREFIX_ADDRESS).get());
-
-        // It is an empty set as the cca list of a student is initialised without ccas
         Set<CcaInformation> ccaInformation = new HashSet<>();
-
         Person person = new Person(name, phone, email, address, ccaInformation);
-
         return new CreateStudentCommand(person);
     }
 

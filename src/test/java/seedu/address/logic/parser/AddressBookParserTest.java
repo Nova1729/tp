@@ -12,7 +12,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import seedu.address.logic.commands.ClearCommand;
@@ -75,9 +74,6 @@ public class AddressBookParserTest {
         assertEquals(new DeleteCcaCommand(INDEX_FIRST_CCA), command);
     }
 
-    // TODO: This largely changes the edit command and related class. Please uncomment it when editing cca field
-    //  has been implemented. EditStudentCommandParser class should be taken care of.
-    @Disabled
     @Test
     public void parseCommand_edit() throws Exception {
         Person person = new PersonBuilder().build();

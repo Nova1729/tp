@@ -32,20 +32,20 @@ public class AddRoleToStudentCommandParser implements Parser<AddRoleToStudentCom
                     MESSAGE_INVALID_COMMAND_FORMAT, AddRoleToStudentCommand.MESSAGE_USAGE));
         }
 
-        Index index;
+        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_CCA_NAME, PREFIX_ROLE);
 
+        Index index;
         try {
             index = ParserUtil.parseIndex(argMultimap.getPreamble());
         } catch (ParseException pe) {
-            throw new ParseException(
-                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddRoleToStudentCommand.MESSAGE_USAGE), pe);
+            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
+                    AddRoleToStudentCommand.MESSAGE_USAGE), pe);
         }
 
-        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_CCA_NAME, PREFIX_ROLE);
         CcaName ccaName = ParserUtil.parseCcaName(argMultimap.getValue(PREFIX_CCA_NAME).get());
         Role role = ParserUtil.parseRole(argMultimap.getValue(PREFIX_ROLE).get());
-
         return new AddRoleToStudentCommand(index, ccaName, role);
+
     }
 
     /**

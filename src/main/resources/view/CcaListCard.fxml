@@ -46,7 +46,7 @@
       <Label fx:id="roles" styleClass="cell_small_label" />
 
       <!-- Row 3: Session count -->
-      <Label fx:id="sessionCount" styleClass="cell_small_label" />
+      <Label fx:id="sessionCount" text="Total sessions: ..." wrapText="true"/>
     </VBox>
   </GridPane>
 </HBox>

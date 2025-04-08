@@ -1,5 +1,6 @@
 package seedu.address.logic.parser;
 
+import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.commands.CommandTestUtil.AMOUNT_DESC_FOUR;
 import static seedu.address.logic.commands.CommandTestUtil.AMOUNT_DESC_ONE;
 import static seedu.address.logic.commands.CommandTestUtil.CCA_NAME_DESC_BASKETBALL;
@@ -11,13 +12,15 @@ import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
 
 import org.junit.jupiter.api.Test;
 
-import seedu.address.logic.Messages;
 import seedu.address.logic.commands.RecordAttendanceCommand;
 import seedu.address.model.cca.Amount;
 import seedu.address.model.cca.CcaName;
 
 
 public class RecordAttendanceCommandParserTest {
+
+    private static final String MESSAGE_INVALID_FORMAT =
+            String.format(MESSAGE_INVALID_COMMAND_FORMAT, RecordAttendanceCommand.MESSAGE_USAGE);
 
     private RecordAttendanceCommandParser parser = new RecordAttendanceCommandParser();
 
@@ -45,15 +48,15 @@ public class RecordAttendanceCommandParserTest {
     public void parse_invalidArgs_throwsParseException() {
         // non integer amount
         assertParseFailure(parser, INDEX_FIRST_PERSON.getOneBased() + CCA_NAME_DESC_BASKETBALL + INVALID_AMOUNT_DESC,
-                String.format(Messages.MESSAGE_INVALID_COMMAND_FORMAT, RecordAttendanceCommand.MESSAGE_USAGE));
+                Amount.MESSAGE_CONSTRAINTS);
 
         // missing amount prefix
         assertParseFailure(parser, INDEX_FIRST_PERSON.getOneBased() + CCA_NAME_DESC_BASKETBALL + "1",
-                String.format(Messages.MESSAGE_INVALID_COMMAND_FORMAT, RecordAttendanceCommand.MESSAGE_USAGE));
+                MESSAGE_INVALID_FORMAT);
 
         // missing cca name prefix
         assertParseFailure(parser, INDEX_FIRST_PERSON.getOneBased() + " Basketball" + AMOUNT_DESC_ONE,
-                String.format(Messages.MESSAGE_INVALID_COMMAND_FORMAT, RecordAttendanceCommand.MESSAGE_USAGE));
+                MESSAGE_INVALID_FORMAT);
     }
 
 }

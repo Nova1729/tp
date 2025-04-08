@@ -31,7 +31,8 @@ public class RemoveRoleFromStudentCommand extends Command {
             + "Example: " + COMMAND_WORD + " 1 "
             + PREFIX_CCA_NAME + "Basketball";
 
-    public static final String MESSAGE_DELETE_ROLE_FROM_STUDENT_SUCCESS = "Deleted %2$s role from student: %1$s";
+    public static final String MESSAGE_REMOVE_ROLE_FROM_STUDENT_SUCCESS =
+            "Deleted %2$s role from student: %1$s in %3$s CCA.";
     public static final String MESSAGE_ROLE_NOT_ASSIGNED = "This student does not have a role in this CCA.";
 
     private final Index studentIndex;
@@ -72,10 +73,10 @@ public class RemoveRoleFromStudentCommand extends Command {
         Role role = personToRemoveRole.getRole(targetCca);
         Person personWithRemovedRole = personToRemoveRole.removeRole(targetCca);
         model.setPerson(personToRemoveRole, personWithRemovedRole);
-        model.updateFilteredPersonList(Model.PREDICATE_SHOW_ALL_PERSONS);
 
-        return new CommandResult(String.format(MESSAGE_DELETE_ROLE_FROM_STUDENT_SUCCESS,
-                Messages.format(personToRemoveRole), Messages.format(role)));
+        return new CommandResult(String.format(MESSAGE_REMOVE_ROLE_FROM_STUDENT_SUCCESS,
+                Messages.format(personToRemoveRole.getName()), Messages.format(role),
+                Messages.format(targetCca.getCcaName())));
     }
 
     @Override

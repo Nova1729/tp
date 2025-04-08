@@ -30,7 +30,6 @@ public class CreateCcaCommandParser implements Parser<CreateCcaCommand> {
         argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_CCA_NAME);
         CcaName ccaName = ParserUtil.parseCcaName(argMultimap.getValue(PREFIX_CCA_NAME).get());
         Cca cca = new Cca(ccaName);
-
         return new CreateCcaCommand(cca);
     }
 

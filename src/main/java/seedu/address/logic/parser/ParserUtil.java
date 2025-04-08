@@ -8,7 +8,6 @@ import java.util.Set;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.StringUtil;
-import seedu.address.logic.Messages;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.cca.Amount;
 import seedu.address.model.cca.Cca;
@@ -163,7 +162,7 @@ public class ParserUtil {
         requireNonNull(amount);
         String trimmedAmount = amount.trim();
         if (!StringUtil.isNonZeroUnsignedInteger(trimmedAmount)) {
-            throw new ParseException(Messages.MESSAGE_INVALID_AMOUNT);
+            throw new ParseException(Amount.MESSAGE_CONSTRAINTS);
         }
         return new Amount(Integer.parseInt(trimmedAmount));
     }
@@ -197,8 +196,8 @@ public class ParserUtil {
     public static SessionCount parseTotalSessions(String totalSessions) throws ParseException {
         requireNonNull(totalSessions);
         String trimmedTotalSessions = totalSessions.trim();
-        if (!StringUtil.isNonZeroUnsignedInteger(trimmedTotalSessions)) {
-            throw new ParseException(Messages.MESSAGE_INVALID_AMOUNT);
+        if (!StringUtil.isNonNegativeUnsignedInteger(trimmedTotalSessions)) {
+            throw new ParseException(SessionCount.MESSAGE_CONSTRAINTS);
         }
         return new SessionCount(Integer.parseInt(trimmedTotalSessions));
     }

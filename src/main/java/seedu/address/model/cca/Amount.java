@@ -8,7 +8,7 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  */
 public class Amount {
 
-    private static final String MESSAGE_CONSTRAINTS =
+    public static final String MESSAGE_CONSTRAINTS =
             "Amount should be a positive integer.";
 
     private final int amount;

@@ -58,6 +58,7 @@ public class MainWindow extends UiPart<Stage> {
      */
     public MainWindow(Stage primaryStage, Logic logic) {
         super(FXML, primaryStage);
+        primaryStage.setMinWidth(640);
 
         // Set dependencies
         this.primaryStage = primaryStage;

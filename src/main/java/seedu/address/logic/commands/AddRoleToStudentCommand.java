@@ -33,7 +33,7 @@ public class AddRoleToStudentCommand extends Command {
             + PREFIX_CCA_NAME + "Basketball "
             + PREFIX_ROLE + "Center";
 
-    public static final String MESSAGE_ADD_ROLE_TO_STUDENT_SUCCESS = "Added %2$s role to student: %1$s";
+    public static final String MESSAGE_ADD_ROLE_TO_STUDENT_SUCCESS = "Added %2$s role to student: %1$s in %3$s CCA.";
     public static final String MESSAGE_ROLE_ALREADY_ASSIGNED = "This student already has a role in this CCA.";
     public static final String MESSAGE_CANNOT_ASSIGN_DEFAULT_ROLE = "Cannot assign a default role "
             + DEFAULT_ROLE_NAME + " to a student.";
@@ -70,10 +70,10 @@ public class AddRoleToStudentCommand extends Command {
 
         Person personWithAddedRole = personToAddRole.addRole(targetCca, role);
         model.setPerson(personToAddRole, personWithAddedRole);
-        model.updateFilteredPersonList(Model.PREDICATE_SHOW_ALL_PERSONS);
 
         return new CommandResult(String.format(
-                MESSAGE_ADD_ROLE_TO_STUDENT_SUCCESS, Messages.format(personWithAddedRole), Messages.format(role)));
+                MESSAGE_ADD_ROLE_TO_STUDENT_SUCCESS, Messages.format(personWithAddedRole.getName()),
+                Messages.format(role), Messages.format(targetCca.getCcaName())));
     }
 
     /**

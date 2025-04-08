@@ -1,80 +1,235 @@
 {
   "_comment": "AddressBook save file which contains the same Person values as in TypicalPersons#getTypicalAddressBook()",
-  "persons" : [ {
-    "name" : "Alice Pauline",
-    "phone" : "94351253",
-    "email" : "alice@example.com",
-    "address" : "123, Jurong West Ave 6, #08-111",
-    "roles" : [ "friends" ],
-    "ccas" : [
-      {
-        "ccaName": "Acting"
-      }
-     ]
-  }, {
-    "name" : "Benson Meier",
-    "phone" : "98765432",
-    "email" : "johnd@example.com",
-    "address" : "311, Clementi Ave 2, #02-25",
-    "roles" : [ "owesMoney", "friends" ],
-    "ccas" : [
-      {
-        "ccaName": "Basketball"
-      },
-      {
-        "ccaName": "Badminton"
-      }
-     ]
-  }, {
-    "name" : "Carl Kurz",
-    "phone" : "95352563",
-    "email" : "heinz@example.com",
-    "address" : "wall street",
-    "roles" : [ ],
-    "ccas" : [ ]
-  }, {
-    "name" : "Daniel Meier",
-    "phone" : "87652533",
-    "email" : "cornelia@example.com",
-    "address" : "10th street",
-    "roles" : [ "friends" ],
-    "ccas" : [
-      {
-        "ccaName": "Basketball"
-      }
-    ]
-  }, {
-    "name" : "Elle Meyer",
-    "phone" : "9482224",
-    "email" : "werner@example.com",
-    "address" : "michegan ave",
-    "roles" : [ ],
-    "ccas" : [ ]
-  }, {
-    "name" : "Fiona Kunz",
-    "phone" : "9482427",
-    "email" : "lydia@example.com",
-    "address" : "little tokyo",
-    "roles" : [ ],
-    "ccas" : [ ]
-  }, {
-    "name" : "George Best",
-    "phone" : "9482442",
-    "email" : "anna@example.com",
-    "address" : "4th street",
-    "roles" : [ ],
-    "ccas" : [ ]
-  } ],
+  "persons": [
+    {
+      "name": "Alice Pauline",
+      "phone": "94351253",
+      "email": "alice@example.com",
+      "address": "123, Jurong West Ave 6, #08-111",
+      "ccaInformation": [
+        {
+          "cca": {
+            "ccaName": "Basketball",
+            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
+            "totalSessions": 15
+          },
+          "role": "Member",
+          "attendedSessions": 10
+        },
+        {
+          "cca": {
+            "ccaName": "Acting",
+            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
+            "totalSessions": 10
+          },
+          "role": "Vice-President",
+          "attendedSessions": 8
+        }
+      ]
+    },
+    {
+      "name": "Benson Meier",
+      "phone": "98765432",
+      "email": "johnd@example.com",
+      "address": "311, Clementi Ave 2, #02-25",
+      "ccaInformation": [
+        {
+          "cca": {
+            "ccaName": "Badminton",
+            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
+            "totalSessions": 20
+          },
+          "role": "Member",
+          "attendedSessions": 7
+        },
+        {
+          "cca": {
+            "ccaName": "Swimming",
+            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
+            "totalSessions": 10
+          },
+          "role": "Captain",
+          "attendedSessions": 9
+        }
+      ]
+    },
+    {
+      "name": "Carl Kurz",
+      "phone": "95352563",
+      "email": "carl@example.com",
+      "address": "231 Pioneer Road, #05-05",
+      "ccaInformation": [
+        {
+          "cca": {
+            "ccaName": "Tennis",
+            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
+            "totalSessions": 20
+          },
+          "role": "Member",
+          "attendedSessions": 17
+        },
+        {
+          "cca": {
+            "ccaName": "Table Tennis",
+            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
+            "totalSessions": 15
+          },
+          "role": "Captain",
+          "attendedSessions": 12
+        }
+      ]
+    },
+    {
+      "name": "Daniel Meier",
+      "phone": "87652533",
+      "email": "daniel@example.com",
+      "address": "10th street, #05-69",
+      "ccaInformation": [
+        {
+          "cca": {
+            "ccaName": "Track and Field",
+            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
+            "totalSessions": 15
+          },
+          "role": "Vice-Captain",
+          "attendedSessions": 12
+        },
+        {
+          "cca": {
+            "ccaName": "Volleyball",
+            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
+            "totalSessions": 10
+          },
+          "role": "Member",
+          "attendedSessions": 8
+        }
+      ]
+    },
+    {
+      "name": "Elle Meyer",
+      "phone": "9482224",
+      "email": "elle@example.com",
+      "address": "145 Michigan ave",
+      "ccaInformation": [
+        {
+          "cca": {
+            "ccaName": "Badminton",
+            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
+            "totalSessions": 20
+          },
+          "role": "Vice-Captain",
+          "attendedSessions": 14
+        },
+        {
+          "cca": {
+            "ccaName": "Gardening",
+            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
+            "totalSessions": 20
+          },
+          "role": "President",
+          "attendedSessions": 17
+        }
+      ]
+    },
+    {
+      "name": "Fiona Kunz",
+      "phone": "9482427",
+      "email": "fiona@example.com",
+      "address": "Little tokyo",
+      "ccaInformation": [
+        {
+          "cca": {
+            "ccaName": "Swimming",
+            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
+            "totalSessions": 10
+          },
+          "role": "Member",
+          "attendedSessions": 8
+        },
+        {
+          "cca": {
+            "ccaName": "Tennis",
+            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
+            "totalSessions": 20
+          },
+          "role": "Member",
+          "attendedSessions": 12
+        }
+      ]
+    },
+    {
+      "name": "George Best",
+      "phone": "9482442",
+      "email": "anna@example.com",
+      "address": "4th street",
+      "ccaInformation": [
+        {
+          "cca": {
+            "ccaName": "Basketball",
+            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
+            "totalSessions": 15
+          },
+          "role": "Member",
+          "attendedSessions": 11
+        },
+        {
+          "cca": {
+            "ccaName": "Gardening",
+            "roles": [ "President", "Vice-President", "Captain", "Vice-Captain", "Member" ],
+            "totalSessions": 20
+          },
+          "role": "Vice-President",
+          "attendedSessions": 12
+        }
+      ]
+    }
+  ],
 
-  "ccas" : [
+  "ccas": [
     {
-      "ccaName": "Basketball"
+      "ccaName": "Acting",
+      "roles": [ "President", "Vice-President", "Member" ],
+      "totalSessions": 10
     },
     {
-      "ccaName": "Badminton"
+      "ccaName": "Basketball",
+      "roles": [ "Captain", "Vice-Captain", "Member" ],
+      "totalSessions": 15
     },
     {
-      "ccaName": "Acting"
+      "ccaName": "Badminton",
+      "roles": [ "Captain", "Vice-Captain", "Member" ],
+      "totalSessions": 20
+    },
+    {
+      "ccaName": "Gardening",
+      "roles": [ "President", "Vice-President", "Member" ],
+      "totalSessions": 20
+    },
+    {
+      "ccaName": "Swimming",
+      "roles": [ "Captain", "Vice-Captain", "Member" ],
+      "totalSessions": 10
+    },
+    {
+      "ccaName": "Table Tennis",
+      "roles": [ "Captain", "Vice-Captain", "Member" ],
+      "totalSessions": 15
+    },
+    {
+      "ccaName": "Tennis",
+      "roles": [ "Captain", "Vice-Captain", "Member" ],
+      "totalSessions": 20
+    },
+    {
+      "ccaName": "Track and Field",
+      "roles": [ "Captain", "Vice-Captain", "Member" ],
+      "totalSessions": 15
+    },
+    {
+      "ccaName": "Volleyball",
+      "roles": [ "Captain", "Vice-Captain", "Member" ],
+      "totalSessions": 10
     }
   ]
 }

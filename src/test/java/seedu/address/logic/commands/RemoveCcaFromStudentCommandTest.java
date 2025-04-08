@@ -61,7 +61,7 @@ public class RemoveCcaFromStudentCommandTest {
         // Create and execute the command
         RemoveCcaFromStudentCommand command = new RemoveCcaFromStudentCommand(INDEX_FIRST_PERSON, CCA_NAME_BASKETBALL);
         String expectedMessage = String.format(RemoveCcaFromStudentCommand.MESSAGE_REMOVE_CCA_SUCCESS,
-                Messages.format(expectedPerson), Messages.format(CCA_NAME_BASKETBALL));
+                Messages.format(expectedPerson.getName()), Messages.format(CCA_NAME_BASKETBALL));
 
         assertCommandSuccess(command, model, expectedMessage, expectedModel);
     }
@@ -69,6 +69,7 @@ public class RemoveCcaFromStudentCommandTest {
     @Test
     public void execute_validInputFilteredList_success() {
         showPersonAtIndex(model, INDEX_FIRST_PERSON); // Filter list to show only the person to edit
+        showPersonAtIndex(expectedModel, INDEX_FIRST_PERSON); // Filter list to show only the person to edit
 
         // Build the expected person and model as in the unfiltered test
         Set<CcaInformation> originalCcas = personToEdit.getCcaInformations();
@@ -81,7 +82,7 @@ public class RemoveCcaFromStudentCommandTest {
         // Create and execute the command
         RemoveCcaFromStudentCommand command = new RemoveCcaFromStudentCommand(INDEX_FIRST_PERSON, CCA_NAME_BASKETBALL);
         String expectedMessage = String.format(RemoveCcaFromStudentCommand.MESSAGE_REMOVE_CCA_SUCCESS,
-                Messages.format(expectedPerson), Messages.format(CCA_NAME_BASKETBALL));
+                Messages.format(expectedPerson.getName()), Messages.format(CCA_NAME_BASKETBALL));
 
         // model will have filter reset, expectedModel does not need filter reset for comparison
         assertCommandSuccess(command, model, expectedMessage, expectedModel);
@@ -97,6 +98,8 @@ public class RemoveCcaFromStudentCommandTest {
     @Test
     public void execute_ccaNotInPersonFilteredList_failure() {
         showPersonAtIndex(model, INDEX_FIRST_PERSON);
+        showPersonAtIndex(expectedModel, INDEX_FIRST_PERSON);
+
         // Assuming the first person does not have Tennis
         RemoveCcaFromStudentCommand command = new RemoveCcaFromStudentCommand(INDEX_FIRST_PERSON, CCA_NAME_TENNIS);
         assertCommandFailure(command, model, Messages.MESSAGE_CCA_NOT_IN_PERSON);
@@ -114,6 +117,8 @@ public class RemoveCcaFromStudentCommandTest {
     @Test
     public void execute_invalidPersonIndexFilteredList_failure() {
         showPersonAtIndex(model, INDEX_FIRST_PERSON);
+        showPersonAtIndex(expectedModel, INDEX_FIRST_PERSON);
+
         Index outOfBoundIndex = INDEX_SECOND_PERSON; // Index 2 is out of bounds for filtered list of size 1
         RemoveCcaFromStudentCommand command = new RemoveCcaFromStudentCommand(outOfBoundIndex, CCA_NAME_BASKETBALL);
         assertCommandFailure(command, model, Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);

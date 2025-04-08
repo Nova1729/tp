@@ -3,7 +3,6 @@ package seedu.address.logic.commands;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_CCA_NAME;
-import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
 import java.util.List;
 
@@ -66,12 +65,9 @@ public class RemoveCcaFromStudentCommand extends Command {
         }
 
         Person personWithRemovedCca = personToRemoveCca.removeCca(targetCca);
-
         model.setPerson(personToRemoveCca, personWithRemovedCca);
-
-        model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
-        return new CommandResult(String.format(MESSAGE_REMOVE_CCA_SUCCESS, Messages.format(personWithRemovedCca),
-                Messages.format(ccaName)));
+        return new CommandResult(String.format(MESSAGE_REMOVE_CCA_SUCCESS,
+                Messages.format(personWithRemovedCca.getName()), Messages.format(ccaName)));
     }
 
     @Override

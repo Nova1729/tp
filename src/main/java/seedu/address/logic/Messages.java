@@ -7,6 +7,7 @@ import java.util.stream.Stream;
 import seedu.address.logic.parser.Prefix;
 import seedu.address.model.cca.Amount;
 import seedu.address.model.cca.Cca;
+import seedu.address.model.cca.CcaInformation;
 import seedu.address.model.cca.CcaName;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
@@ -24,13 +25,12 @@ public class Messages {
     public static final String MESSAGE_PERSONS_LISTED_OVERVIEW = "%1$d students listed!";
     public static final String MESSAGE_DUPLICATE_FIELDS =
                 "Multiple values specified for the following single-valued field(s): ";
-    public static final String MESSAGE_DUPLICATE_PERSON = "This student already exists in the student list";
-    public static final String MESSAGE_DUPLICATE_CCA = "This CCA already exists in the CCA list";
-    public static final String MESSAGE_INVALID_AMOUNT = "Amount should be a non-zero unsigned integer";
+    public static final String MESSAGE_DUPLICATE_PERSON =
+                "A student with the same name, phone number, or email already exists in the student list";
+    public static final String MESSAGE_DUPLICATE_CCA = "A CCA with the same name already exists in the CCA list";
     public static final String MESSAGE_CCA_NOT_FOUND = "The CCA does not exist in the CCA list";
     public static final String MESSAGE_ROLE_NOT_FOUND = "The role does not exist in the CCA";
     public static final String MESSAGE_CCA_NOT_IN_PERSON = "The student is not in the CCA";
-
 
     /**
      * Returns an error message indicating the duplicate prefixes.
@@ -57,7 +57,11 @@ public class Messages {
                 .append("; Address: ")
                 .append(person.getAddress())
                 .append("; CcaInformation: ");
-        person.getCcaInformations().forEach(builder::append);
+        for (CcaInformation ccaInformation : person.getCcaInformations()) {
+            builder.append(ccaInformation)
+                    .append(", ");
+        }
+        builder.delete(builder.length() - 2, builder.length());
         return builder.toString();
     }
 

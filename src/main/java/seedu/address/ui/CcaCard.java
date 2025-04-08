@@ -53,7 +53,7 @@ public class CcaCard extends UiPart<Region> {
                     .collect(Collectors.joining(", "));
             roles.setText("Roles: " + rolesString);
         }
-        sessionCount.setText("Total number of sessions: "
+        sessionCount.setText("Total sessions: "
                 + cca.getTotalSessions().getSessionCount());
     }
 }

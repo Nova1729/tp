@@ -3,12 +3,12 @@
 object "<u>basketball:CcaName</u>" as ccaName {
 }
 
-object "<u>sessionAttended:SessionCount</u>" as sessionAttended {
-  amount = 1
+object "<u>sessionsAttended:SessionCount</u>" as sessionsAttended {
+  sessionCount = 1
 }
 
 object "<u>totalSessions:SessionCount</u>" as totalSessions {
-  totalSessions = 11
+  sessionCount = 11
 }
 
 object "<u>president:Role</u>" as president {
@@ -34,5 +34,6 @@ basketballCca --> totalSessions
 basketballCca --> president
 basketballCca --> member
 attendance --> totalSessions
-attendance --> sessionAttended
+attendance --> sessionsAttended
+member -[hidden]left-> president
 @enduml

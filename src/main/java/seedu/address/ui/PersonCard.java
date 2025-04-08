@@ -56,6 +56,7 @@ public class PersonCard extends UiPart<Region> {
         address.setText(person.getAddress().value);
         email.setText(person.getEmail().value);
 
+        ccas.setWrapText(true);
         person.getCcaInformations().stream()
                 .map(ccaInfo -> ccaInfo.getCca().getCcaName().fullCcaName + " "
                         + ccaInfo.getRole())

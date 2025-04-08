@@ -10,7 +10,7 @@ start
 
 if () then ([invalid input])
   :Display error message;
-  stop
+
 
 else ([valid input])
   :Create AddRoleToStudentCommand object;
@@ -19,7 +19,7 @@ else ([valid input])
 
 if () then ([student does not exist in Model])
   :Display error message;
-  stop
+
 
 else ([else])
 
@@ -27,26 +27,32 @@ else ([else])
 
 if () then ([CCA does not exist])
   :Display error message;
-  stop
+
 
 else ([else])
   :get Cca object;
 
 if () then ([person does not have CCA])
   :Display error message;
-  stop
+
 
 else ([else])
 
 if () then ([invalid role or role not exist in CCA])
   :Display error message;
-  stop
+
 
 else ([else])
   :Create student with added role;
   :Update student to Model;
   :Update in Storage;
   :Update UI;
+
+  endif
+  endif
+  endif
+  endif
+  endif
 stop
 
 @enduml

@@ -32,18 +32,21 @@ public class EditCcaCommandParser implements Parser<EditCcaCommand> {
         ArgumentMultimap argMultimap =
                 ArgumentTokenizer.tokenize(args, PREFIX_CCA_NAME, PREFIX_ROLE, PREFIX_TOTAL_SESSIONS);
 
-        Index index;
+        if (argMultimap.getPreamble().isEmpty()) {
+            throw new ParseException(
+                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditCcaCommand.MESSAGE_USAGE));
+        }
 
+        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_CCA_NAME, PREFIX_TOTAL_SESSIONS);
+        EditCcaDescriptor editCcaDescriptor = new EditCcaDescriptor();
+
+        Index index;
         try {
             index = ParserUtil.parseIndex(argMultimap.getPreamble());
         } catch (ParseException pe) {
             throw new ParseException(
                     String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditCcaCommand.MESSAGE_USAGE), pe);
         }
-
-        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_CCA_NAME, PREFIX_TOTAL_SESSIONS);
-
-        EditCcaDescriptor editCcaDescriptor = new EditCcaDescriptor();
 
         if (argMultimap.getValue(PREFIX_CCA_NAME).isPresent()) {
             editCcaDescriptor.setCcaName(ParserUtil.parseCcaName(argMultimap.getValue(PREFIX_CCA_NAME).get()));

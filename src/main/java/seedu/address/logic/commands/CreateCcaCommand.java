@@ -18,7 +18,9 @@ public class CreateCcaCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a CCA to the CCA list. "
             + "Parameters: "
-            + PREFIX_CCA_NAME + "NAME ";
+            + PREFIX_CCA_NAME + "NAME\n"
+            + "Example: " + COMMAND_WORD + " "
+            + PREFIX_CCA_NAME + "Handball";
 
     public static final String MESSAGE_SUCCESS = "New CCA added: %1$s";
 
